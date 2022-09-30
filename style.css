@@ -1,0 +1,104 @@
+:root {
+    --bgc: #ffff7d;
+    --border-clr: #a08f20;
+
+    --border-width: 2px;
+
+    --font-lg: 5rem;
+    --font-md: 3rem;
+    --font-sm: 1.8rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { font-size: 62.5%; }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: darkblue;
+}
+
+body,
+.quote-input { font-family: 'Times New Roman', Times, serif; }
+
+.score,
+.result { font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+
+.container {
+    width: 57rem;
+    max-width: 90%;
+    padding: 2rem;
+    background-color: var(--bgc);
+    border-radius: .75rem;
+}
+
+.timer {
+    position: absolute;
+    top: 7rem;
+    color: var(--bgc);
+    font-size: var(--font-lg);
+    font-weight: bold;
+}
+
+.quote-display {
+    margin-bottom: 1rem;
+    margin-left: calc(.85rem + var(--border-width));
+    margin-right: calc(1rem + var(--border-width));
+    font-size: var(--font-md);
+    font-weight: bold;
+}
+
+.quote-input {
+    width: 100%;
+    height: 15rem;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    font-size: var(--font-sm);
+    border: var(--border-width) solid var(--border-clr);
+    border-radius: .5rem;
+    outline: none;
+    resize: none;   /* control the resizing of the input box */
+}
+
+/* ************************************************************
+    Always use the :focus pseudo-class when disabling outline
+    of the input field
+ ************************************************************ */
+.quote-input:focus { border-color: black; }
+
+/* ************************************************************
+    classes to change colors added via JavaScript
+ ************************************************************ */
+.correct { color: green; }
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+    /* border-bottom: var(--border-width) solid red; */
+}
+
+.score {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: var(--font-sm);
+    color: white;
+}
+
+.result {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: var(--font-sm);
+    color: white;
+}
